@@ -19,10 +19,10 @@ let input = [
   function countHelper(rowIndex, columnIndex, grid) {
     if(grid[rowIndex] === undefined || grid[rowIndex][columnIndex] === undefined || grid[rowIndex][columnIndex] === '0') return;
     grid[rowIndex][columnIndex] = '0';
-    teraform(rowIndex+1, columnIndex, grid);
-    teraform(rowIndex-1, columnIndex, grid);
-    teraform(rowIndex, columnIndex+1, grid);
-    teraform(rowIndex, columnIndex-1, grid);
+    countHelper(rowIndex+1, columnIndex, grid);
+    countHelper(rowIndex-1, columnIndex, grid);
+    countHelper(rowIndex, columnIndex+1, grid);
+    countHelper(rowIndex, columnIndex-1, grid);
   
   }
   numIslands(input);
